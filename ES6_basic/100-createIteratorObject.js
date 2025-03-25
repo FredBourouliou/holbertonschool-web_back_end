@@ -4,4 +4,4 @@ export default function createIteratorObject(report) {
     employees.push(...department);
   }
   return employees;
-} 
+}
