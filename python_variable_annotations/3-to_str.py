@@ -11,4 +11,4 @@ def to_str(n: float) -> str:
     Returns:
         String representation of the float.
     """
-    return str(n) 
+    return str(n)
