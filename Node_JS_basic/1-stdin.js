@@ -5,9 +5,13 @@ process.stdin.setEncoding('utf8');
 process.stdin.on('data', (data) => {
   const name = data.trim();
   console.log(`Your name is: ${name}`);
-  process.exit();
+
+  // Only exit automatically if stdin is not a TTY (meaning input is from a pipe)
+  if (!process.stdin.isTTY) {
+    process.exit();
+  }
 });
 
-process.on('exit', () => {
-  console.log('This important software is now closing');
+process.stdin.on('end', () => {
+  process.stdout.write('This important software is now closing\n');
 });
