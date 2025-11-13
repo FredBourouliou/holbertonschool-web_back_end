@@ -10,7 +10,7 @@ import uuid
 
 
 TIMESTAMP_FORMAT = "%Y-%m-%dT%H:%M:%S"
-DATA_DIR = ".db_User"
+DATA_DIR = "User"
 
 
 class Base():
