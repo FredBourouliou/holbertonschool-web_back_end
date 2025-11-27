@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(tree:*)",
+      "Bash(python3 -m py_compile:*)",
+      "Bash(chmod:*)",
+      "Bash(python3:*)",
+      "Bash(pip3 install:*)",
+      "Bash(pkill:*)",
+      "Bash(cat:*)",
+      "Bash(curl:*)",
+      "Bash(kill:*)",
+      "Bash(pycodestyle:*)",
+      "Bash(lsof:*)",
+      "Bash(xargs kill:*)",
+      "Bash(API_HOST=0.0.0.0 API_PORT=5000 AUTH_TYPE=basic_auth python3:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

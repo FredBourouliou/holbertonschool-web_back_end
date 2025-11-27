@@ -7,48 +7,37 @@ function countStudents(path) {
         reject(new Error('Cannot load the database'));
         return;
       }
-      
-      try {
-        // Split into lines and filter out empty lines
-        const lines = data.split('\n').filter(line => line.trim() !== '');
-        
-        // Handle empty file
-        if (lines.length <= 1) { // If there's only header or less
-          console.log('Number of students: 0');
-          resolve();
-          return;
-        }
-        
-        // The first line is the header
-        const students = lines.slice(1);
-        
-        // Group students by field
-        const fields = {};
-        let total = 0;
-        
-        for (const line of students) {
-          if (line.trim() === '') continue;
-          
-          const parts = line.split(',');
-          if (parts.length < 4) continue;
-          
+
+      const lines = data.split('\n').filter((line) => line.trim() !== '');
+      const students = lines.slice(1);
+
+      const fields = {};
+      let total = 0;
+
+      for (const student of students) {
+        const parts = student.split(',');
+        if (parts.length >= 4) {
           const firstname = parts[0].trim();
           const field = parts[3].trim();
-          
-          if (!fields[field]) fields[field] = [];
+
+          if (!fields[field]) {
+            fields[field] = [];
+          }
+
           fields[field].push(firstname);
-          total++;
+          total += 1;
         }
-        
-        // Output the results
-        console.log(`Number of students: ${total}`);
-        for (const [field, names] of Object.entries(fields)) {
-          console.log(`Number of students in ${field}: ${names.length}. List: ${names.join(', ')}`);
-        }
-        resolve();
-      } catch (error) {
-        reject(new Error('Cannot load the database'));
       }
+
+      console.log(`Number of students: ${total}`);
+      for (const field in fields) {
+        if (Object.prototype.hasOwnProperty.call(fields, field)) {
+          const list = fields[field].join(', ');
+          console.log(`Number of students in ${field}: ${fields[field].length}. List: ${list}`);
+        }
+      }
+
+      resolve();
     });
   });
 }
