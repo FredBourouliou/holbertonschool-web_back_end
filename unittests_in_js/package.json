@@ -1,0 +1,16 @@
+{
+  "name": "unittests_in_js",
+  "version": "1.0.0",
+  "description": "Unit testing in JavaScript with Mocha, Chai and Sinon",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^11.7.5",
+    "sinon": "^7.5.0"
+  }
+}
