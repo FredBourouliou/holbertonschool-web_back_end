@@ -1,5 +1,19 @@
 # Queuing System in JS
 
+```
+    🎄          🎄          🎄
+   /|\        /|\        /|\
+  /_|_\      /_|_\      /_|_\
+    |          |          |
+
+  >(')____,  >(')____,  >(')____,
+   (` =~~/    (` =~~/    (` =~~/
+~^~^`---'~^~^~^`---'~^~^~^`---'~^~^~
+   🎁          🎁          🎁
+```
+
+*Joyeuses fêtes de la part des canards de Noël !* 🦆🎅
+
 This project implements a queuing system using Redis and Node.js.
 
 ## Learning Objectives
