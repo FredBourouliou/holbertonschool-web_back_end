@@ -1,1 +1,19 @@
-node_modules
+# OS and editor files
+.DS_Store
+._*
+*.swp
+*~
+
+# Local AI assistant settings
+.claude/
+
+# Python
+__pycache__/
+*.pyc
+
+# Node
+node_modules/
+
+# Runtime data and archives
+dump.rdb
+*.zip
